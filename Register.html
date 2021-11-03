@@ -1,0 +1,106 @@
+<html>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+table{
+margin-left: auto;
+margin-right: auto;
+}
+ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+}
+li{
+float: left;
+}
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+li a:hover {
+	background-color: #111;
+}
+</style>
+
+
+<script type="text/javascript">
+function valid(){
+	var cpass=document.frm.cpass;
+	var cname=document.frm.cname;
+	var cadr=document.frm.cadr;
+	var cphn=document.frm.cphn;
+	var cmail=document.frm.cmail;
+
+	if(cpass.value==""){
+		alert("Enter password");
+		return false;
+		}
+	else if(cpass.value.length<=6){
+		alert("password must be greater than 6 char");
+		return false;
+		}
+	else if(cname.value==""){
+		alert("name cannot be blank");
+		return false;
+		}
+	else if(cadr.value==""){
+		alert("Address cannot be blank");
+		return false;
+		}
+	else if(cphn.value==""){
+		alert("phone cannot be blank");
+		return false;
+		}
+	else if(cphn.value.length!=10){
+			alert("Please check number");
+			return false;
+		}
+	else if(isNaN(cphn.value)){
+		alert("Invalid number");
+		return false;
+		}
+	else if(cmail.value==""){
+		alert("Enter mail id");
+		return false;
+		}
+	
+}
+
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td>
+<ul>
+<li><a href="indexhome.html">Home</a></li>
+<li><a href="Register.html">User registration</a></li>
+<li><a href="login2.html">User Login</a></li>
+<li><a href="alltraininfo.jsp">train Information</a></li>
+<li><a href="contact2.html">Contact Us</a></li>
+<li><a href="About.html">About Us</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<form name="frm" action="Register" onsubmit="return valid()">
+<table style="border: solid;">
+<tr><th colspan="2"> Customer Registration</th></tr>
+<tr><td>Enter password :</td><td><input type="password" name="cpass"></td></tr>
+<tr><td>Enter Name:</td><td><input type="text" name="cname"></td></tr>
+<tr><td>Enter Address:</td><td><input type="text" name="cadr"></td></tr>
+<tr><td>Enter Phone Number:</td><td><input type="text" name="cphn"></td></tr>
+<tr><td>Enter Email:</td><td><input type="text" name="cmail"></td></tr>
+<tr><th colspan="2"><input type="submit" value="Register"></th></tr>
+</table>
+</form>
+</body>
+</html>
+
+
